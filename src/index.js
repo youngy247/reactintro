@@ -6,11 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import Greeting from "./Greeting";
 import Header from "./components/Header";
 import Content from "./components/Content";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Content />
+    <Footer />
   </React.StrictMode>
 );
 
