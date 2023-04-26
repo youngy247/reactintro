@@ -1,9 +1,9 @@
-import Button from "./components/Button";
+import Character from "./components/Character";
 
 const App = () => {
   return (
       <>
-        <Button />
+        <Character />
       </>
   )
 }
