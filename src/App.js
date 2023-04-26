@@ -9,8 +9,8 @@ const App = () => {
   return (
       <>
         <Button text="Contact me" newClass="foo"/>
-          <Button text="Details" newClass="foo"/>
-          <Button text="Save" newClass="foo"/>
+          <Button text="Details" newClass="bar"/>
+          <Button text="Save" newClass="baz"/>
       </>
   )
 }
