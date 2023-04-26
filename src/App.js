@@ -8,7 +8,9 @@ import Button from "./components/Button";
 const App = () => {
   return (
       <>
-        <Button />
+        <Button text="Contact me"/>
+          <Button text="Details"/>
+          <Button text="Save"/>
       </>
   )
 }

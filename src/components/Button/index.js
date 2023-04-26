@@ -1,14 +1,6 @@
-const Button = () => {
-
-    let clickCount = 0
-    const handleClick = () => {
-
-        clickCount++
-        console.log(clickCount)
-    }
-
+const Button = (props) => {
     return (
-        <button onClick={handleClick}>Click me!</button>
+        <button>{props.text}</button>
     )
 }
 
