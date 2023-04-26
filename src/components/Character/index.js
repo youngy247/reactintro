@@ -20,7 +20,15 @@ const Character = () => {
         fetch('https://swapi.dev/api/people/' + characterID)
             .then(res => res.json())
             .then(data => {
-                setData(data)
+                if (data.detail === 'Not found'){
+                    setData({
+                        name: 'Unknown',
+                        height: 'Unknown',
+                        mass: 'Unknown'
+                    })
+                } else {
+                    setData(data)
+                }
             })
     }, [characterID])
 
