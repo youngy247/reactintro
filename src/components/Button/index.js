@@ -1,8 +1,12 @@
 const Button = () => {
 
+    let clickCount = 0
     const handleClick = () => {
-        console.log('clicked')
+
+        clickCount++
+        console.log(clickCount)
     }
+
     return (
         <button onClick={handleClick}>Click me!</button>
     )
