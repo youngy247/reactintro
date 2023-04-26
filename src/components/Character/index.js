@@ -1,27 +1,42 @@
 import {useEffect, useState} from "react";
 
 const Character = () => {
-    const [name, setName] = useState('')
-    const [height, setHeight] = useState('')
-    const [mass, setMass] = useState('')
+    const [data, setData] = useState({})
+    const [characterID, setCharacterID] = useState(1)
+
+    const switchToVader = () => {
+        setCharacterID(4)
+    }
+
+    const switchToLuke = () => {
+        setCharacterID(1)
+    }
+
+    const nextCharacter = () => {
+        setCharacterID(characterID + 1)
+    }
 
     useEffect(() => {
-        fetch('https://swapi.dev/api/people/1/')
+        fetch('https://swapi.dev/api/people/' + characterID)
             .then(res => res.json())
             .then(data => {
-                setName(data.name)
-                setHeight(data.height)
-                setMass(data.mass)
+                setData(data)
             })
+    }, [characterID])
 
-    }, [])
     return (
-        <ul>
-            <li>Name: {name}</li>
-            <li>Height: {height}</li>
-            <li>Mass: {mass}</li>
-        </ul>
-    )
+        <>
 
+            <ul>
+                <li>Name: {data.name}</li>
+                <li>Height: {data.height}</li>
+                <li>Mass: {data.mass}</li>
+            </ul>
+            <button onClick={nextCharacter}>Next character</button>
+            <button onClick={switchToVader}>Show me Vader</button>
+            <button onClick={switchToLuke}>Show me Luke</button>
+        </>
+    )
 }
+
 export default Character
