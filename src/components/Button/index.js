@@ -9,7 +9,7 @@ const Button = () => {
     }
 
     useEffect(() => {
-        console.log(counter)
+        document.title = `You clicked ${counter} times`
     }, [counter])
 
     return (
