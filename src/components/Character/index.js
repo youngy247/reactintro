@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 const Character = () => {
     const [data, setData] = useState({})
+    const [homeworld, setHomeWorld] = useState({})
     const [characterID, setCharacterID] = useState(1)
 
     const switchToVader = () => {
@@ -32,6 +33,14 @@ const Character = () => {
             })
     }, [characterID])
 
+    useEffect(() => {
+        fetch(data.homeworld)
+            .then(res => res.json())
+            .then(data => {
+                setHomeWorld(data)
+            })
+    }, [data])
+
     return (
         <>
 
@@ -39,6 +48,7 @@ const Character = () => {
                 <li>Name: {data.name}</li>
                 <li>Height: {data.height}</li>
                 <li>Mass: {data.mass}</li>
+                <li>Homeworld: {homeworld.name}</li>
             </ul>
             <button onClick={nextCharacter}>Next character</button>
             <button onClick={switchToVader}>Show me Vader</button>
