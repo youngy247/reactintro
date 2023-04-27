@@ -7,7 +7,7 @@ const Bitcoin = () => {
        fetch('https://api.coindesk.com/v1/bpi/currentprice/gbp.json')
            .then(res => res.json())
            .then(data => {
-               setPrice(data.bpi.GBP.rate)
+               setPrice(data.bpi.GBP.rate_float)
            }).catch((error) => {
            console.log(error);
        });
