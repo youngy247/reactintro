@@ -22,7 +22,7 @@ const Bitcoin = () => {
         return (
             <div>
                 <p>
-                    The current Bitcoin price in GBP is: <strong>{price}</strong>
+                    The current Bitcoin price in GBP is: <strong>£{price}</strong>
                 </p>
             </div>
         )
